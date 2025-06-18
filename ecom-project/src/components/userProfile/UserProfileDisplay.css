@@ -1,0 +1,174 @@
+ /* UserProfileDisplay.css */
+
+.user-profile-display {
+    padding: 30px;
+    background-color: #f8f9fa; /* Light background for the profile card */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-align: center; /* Center content initially */
+}
+
+.profile-header {
+    margin-bottom: 40px;
+}
+
+.profile-avatar-container {
+    width: 120px; /* Consistent size for avatar */
+    height: 120px;
+    margin: 0 auto 20px auto; /* Center avatar */
+    border-radius: 50%;
+    background-color: #e9ecef; /* Light background for the avatar circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #4d2e01; /* Primary color border */
+    overflow: hidden; /* Ensure SVG stays within bounds */
+}
+
+.profile-avatar {
+    width: 90%; /* Scale SVG inside container */
+    height: 90%;
+    color: #6c757d; /* Muted color for the SVG icon */
+}
+
+.profile-welcome {
+    font-size: 2.2rem;
+    color: #343a40;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+.profile-info-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0; /* Solid, subtle separator */
+    text-align: left; /* Align text within sections to left */
+}
+
+.profile-info-section:last-of-type { /* Use last-of-type for the last actual section */
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.profile-section-title {
+    font-size: 1.5rem;
+    color: #4d2e01; /* Primary blue for section titles */
+    margin-bottom: 15px;
+    font-weight: 600;
+    border-left: 5px solid #4d2e01; /* Left border for emphasis */
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.user-profile-display p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #495057;
+    margin-bottom: 8px;
+    display: flex; /* Use flex to align strong and text */
+    align-items: baseline;
+}
+
+.user-profile-display p strong {
+    color: #333;
+    font-weight: 700;
+    min-width: 100px; /* Ensure strong text takes enough space for alignment */
+    margin-right: 10px; /* Space between bold label and value */
+}
+
+.no-address-message {
+    font-style: italic;
+    color: #dc3545; /* Red color for warning */
+}
+
+.profile-actions {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    gap: 15px; /* Space between buttons */
+    margin-top: 40px;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.profile-actions .btn {
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    border-radius: 8px; /* Slightly more rounded buttons */
+    transition: all 0.3s ease;
+    min-width: 150px; /* Ensure buttons have a minimum width */
+}
+
+.profile-actions .btn-primary {
+    background-color: #4d2e01;
+    border-color: #4d2e01;
+}
+.profile-actions .btn-primary:hover {
+    background-color: transparent;
+    border-color:1px solid #4d2f01de;
+    transform: translateY(-1px);
+    color: #4d2e01;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+}
+
+.profile-actions .btn-info { /* New style for "View Orders" button */
+    background-color: #657868;
+    border-color: #657868;
+    color: #fff; /* White text for contrast */
+}
+.profile-actions .btn-info:hover {
+    background-color: transparent;
+    border-color: #687865;
+    color: #687865;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+}
+
+.profile-actions .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.profile-actions .btn-danger:hover {
+    background-color: transparent;
+    border-color: #bd2130;
+    color: rgb(255, 0, 0);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profile-welcome {
+        font-size: 1.8rem;
+    }
+    .profile-info-section {
+        padding-left: 0; /* Remove left padding for smaller screens */
+        border-left: none; /* Remove left border */
+        text-align: center; /* Center text in sections for small screens */
+    }
+    .profile-section-title {
+        text-align: center; /* Center section title */
+        border-left: none;
+        padding-left: 0;
+        margin-bottom: 25px; /* More space below title */
+    }
+    .user-profile-display p {
+        flex-direction: column; /* Stack label and value */
+        align-items: center; /* Center stacked items */
+    }
+    .user-profile-display p strong {
+        margin-right: 0;
+        margin-bottom: 5px; /* Space below label */
+        min-width: unset; /* Remove min-width on small screens */
+    }
+    .profile-actions {
+        flex-direction: column; /* Stack buttons */
+        align-items: center; /* Center stacked buttons */
+    }
+    .profile-actions .btn {
+        width: 100%; /* Full width buttons when stacked */
+        max-width: 250px; /* Max width for stacked buttons */
+    }
+}

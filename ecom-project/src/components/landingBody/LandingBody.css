@@ -1,0 +1,126 @@
+/* LandingBody.css */
+
+.card-container {
+    display: grid;
+    /* This will create 4 columns of equal width. */
+    /* Adjust minmax for responsiveness if needed. */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Space between cards */
+    margin: 2rem auto; /* Center the container with top/bottom margin */
+    padding: 0 15px; /* Add some padding on the sides */
+    max-width: 1200px; /* Max width to keep content contained */
+}
+
+/* Styles for individual cards */
+.card {
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-radius: 8px; /* Slightly rounded corners */
+    overflow: hidden; /* Ensures image corners are rounded */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    background-color: #fff; /* White background for cards */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px; /* Fixed height for images to ensure uniformity */
+    object-fit: cover; /* Covers the area without distortion */
+    border-bottom: 1px solid #eee; /* Separator below image */
+}
+
+.card-body {
+    padding: 15px; /* Padding inside the card body */
+    text-align: center; /* Center align text */
+}
+
+.card-title {
+    font-size: 1.25rem; /* Larger title font size */
+    font-weight: 600;
+    color: #AB9682; /* Darker color for titles */
+    margin-bottom: 8px;
+    font-family:'poppins'  ; /* Example font */
+}
+
+.product-price { /* Added this class for price styling */
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 0.9rem; /* Smaller text for descriptions */
+    color: #666; /* Muted color for descriptions */
+    margin-bottom: 15px;
+    font-family: 'Inter', sans-serif; /* Example font */
+    /* --- START: Changes for hiding overflow text --- */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 3 lines. Adjust as needed. */
+    -webkit-box-orient: vertical;
+    /* --- END: Changes for hiding overflow text --- */
+}
+
+/* Section title above cards */
+.landing-body-section {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background-color: #f8f8f8; /* Light background for the section */
+}
+
+.landing-body-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+    font-family: 'Cormorant Garamond', serif; /* Example font */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Slightly smaller min size */
+    }
+}
+
+@media (max-width: 992px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 3 or 4 columns on tablets */
+        gap: 15px;
+    }
+    .landing-body-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 2 columns on larger mobiles */
+        gap: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-container {
+        grid-template-columns: 1fr; /* Single column on small mobiles */
+        padding: 0 10px;
+    }
+    .card-img-top {
+        height: 180px;
+    }
+    .landing-body-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    .landing-body-section {
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+}

@@ -1,0 +1,183 @@
+/* src/components/review/ReviewList.css */
+
+/* --- Review List Container --- */
+.review-list {
+    margin-top: 2rem; /* Space from the main heading */
+    max-width: 800px; /* Constrain width for better readability of reviews */
+    margin-left: auto;
+    margin-right: auto; /* Center the review list */
+}
+
+.review-list > p.text-center {
+    /* Styles for "No reviews available" message */
+    font-size: 1.1rem;
+    color: #6c757d;
+    padding: 2rem;
+    background-color: #f8f9fa; /* Light background for the message */
+    border-radius: 0.5rem;
+    border: 1px dashed #dee2e6; /* Dashed border for a friendly empty state */
+}
+
+/* --- Individual Review Card --- */
+.review-card {
+    background-color: #ffffff; /* Clean white background */
+    border: 1px solid #e9ecef; /* Very light, subtle border */
+    border-radius: 0.75rem; /* Rounded corners for a softer feel */
+    padding: 2rem; /* Ample padding inside the card */
+    margin-bottom: 1.5rem; /* Space between review cards */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transitions */
+    position: relative; /* For potential future absolute positioning of elements */
+}
+
+.review-card:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* Slightly more prominent shadow on hover */
+}
+
+/* --- Review Content --- */
+.review-content {
+    font-size: 1.05rem; /* Slightly larger text for readability */
+    color: #495057; /* Darker, more prominent text */
+    line-height: 1.7; /* Improved line height for legibility */
+    margin-bottom: 1rem; /* Space below the review text */
+}
+
+/* --- Star Rating --- */
+.review-rating {
+    font-size: 1.5rem; /* Larger stars */
+    line-height: 1; /* Ensure stars align properly */
+    margin-bottom: 0.75rem; /* Space below stars */
+}
+
+.review-rating .text-warning {
+    color: #ffc107; /* Standard warning yellow for filled stars */
+    /* You might want to match this with your AddReviewForm.css .star.filled color */
+}
+
+.review-rating .text-muted {
+    color: #e9ecef; /* Light gray for empty stars */
+}
+
+/* --- Author and Date --- */
+.review-author,
+.review-date {
+    font-size: 0.9rem;
+    color: #868e96; /* Lighter muted text */
+    margin-bottom: 0.25rem; /* Minimal space between author and date */
+}
+
+/* --- Edit/Delete Actions --- */
+.review-actions {
+    display: flex; /* Use flexbox for button alignment */
+    gap: 0.75rem; /* Space between buttons */
+    margin-top: 1.25rem; /* Space above action buttons */
+    padding-top: 1rem; /* Padding for the action section */
+    border-top: 1px solid #f8f9fa; /* Very subtle separator */
+}
+
+.review-actions .btn {
+    font-size: 0.9rem; /* Smaller button text */
+    padding: 0.4rem 0.9rem; /* Compact padding */
+    border-radius: 0.3rem; /* Slightly rounded buttons */
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.review-actions .btn-primaryy {
+    background-color: #657868; /* Matches your main button color */
+    border-color: #657868;
+    color: #ffffff;
+}
+
+.review-actions .btn-primaryy:hover {
+    background-color: transparent; /* Transparent background on hover */
+    border: 1px solid #536456;
+    color: #536456;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    translate: translateY(-1px);
+
+}
+
+.review-actions .btn-successs {
+    background-color: #657868; /* Standard success green */
+    border: 1px solid #657868;
+    color: #ffffff;
+}
+
+.review-actions .btn-successs:hover {
+    background-color: transparent;
+    border: 1px solid #657868;
+    color: #657868;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    translate: translateY(-1px);
+
+}
+
+.review-actions .btn-danger {
+    background-color: #dc3545; /* Standard danger red */
+    border-color: #dc3545;
+    color: #ffffff;
+}
+
+.review-actions .btn-danger:hover {
+    background-color: transparent;
+    border-color: #ff0019;
+    color: #ff0019;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    translate: translateY(-1px); /* Slight lift effect on hover */
+
+}
+
+.review-actions .btn-secondary {
+    background-color: #6c757d; /* Standard secondary gray */
+    border-color: #6c757d;
+    color: #ffffff;
+}
+
+.review-actions .btn-secondary:hover {
+    background-color: transparent;
+    border: 1px solid #545b62;
+    color: #545b62;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    translate: translateY(-1px);
+}
+
+/* --- Editing Textarea --- */
+.review-card .form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem; /* Space below textarea */
+    border: 1px solid #ced4da;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    color: #495057;
+    box-sizing: border-box; /* Include padding and border in element's total width */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.review-card .form-control:focus {
+    border-color: #657868; /* Matches the highlight color */
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(101, 120, 104, 0.25);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 767.98px) { /* Small devices and down */
+    .review-list {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .review-card {
+        padding: 1.5rem; /* Reduce padding on smaller screens */
+    }
+    .review-content {
+        font-size: 1rem;
+    }
+    .review-rating {
+        font-size: 1.3rem;
+    }
+    .review-actions .btn {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.7rem;
+    }
+}

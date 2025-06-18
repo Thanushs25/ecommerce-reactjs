@@ -1,0 +1,101 @@
+/* UserProfile.css */
+
+.user-profile-wrapper {
+    padding-top: 80px; /* Adjust this value based on your NavigationBar's height */
+    padding-bottom: 50px; /* Add some padding at the bottom */
+    background-color: #fff; /* A light background color for the entire page */
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+.user-profile-wrapper .container {
+    padding-top: 30px; /* Additional top padding for the card itself */
+    padding-bottom: 30px; /* Additional bottom padding for the card itself */
+    max-width: 800px; /* Max width for the profile card to keep it readable */
+    width: 100%; /* Ensure it takes full width within max-width */
+}
+
+.user-profile-wrapper .card {
+    border: none; /* Remove default card border */
+    border-radius: 15px; /* More rounded corners for the card */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); 
+}
+
+.user-profile-wrapper .card h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #343a40;
+    margin-bottom: 30px; /* Space below the main heading */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.user-profile-wrapper .alert {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    padding: 15px 20px;
+}
+
+.user-profile-wrapper .alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.user-profile-wrapper .alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+/* Specific styles for loading/error messages that appear directly in UserProfile */
+.user-profile-wrapper > .text-center { /* Target direct children of the wrapper */
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.user-profile-wrapper > .text-danger {
+    color: #dc3545;
+    font-weight: 500;
+}
+
+/* Responsive adjustments for the wrapper */
+@media (max-width: 992px) {
+    .user-profile-wrapper {
+        padding-top: 70px; /* Adjust for smaller navigation bar on tablets */
+    }
+    .user-profile-wrapper .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .user-profile-wrapper .card h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .user-profile-wrapper {
+        padding-top: 60px; /* Adjust for smaller navigation bar on mobile */
+        padding-bottom: 30px;
+    }
+    .user-profile-wrapper .card {
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .user-profile-wrapper .card h2 {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+    .user-profile-wrapper .alert {
+        font-size: 1rem;
+        padding: 12px 15px;
+    }
+}

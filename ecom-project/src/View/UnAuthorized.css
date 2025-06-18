@@ -1,0 +1,54 @@
+/* Overall Wrapper */
+.unauthorized-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 56px); /* Full viewport height minus navigation bar */
+    background-color: #f8f9fa; /* Light background */
+    padding: 20px;
+}
+
+/* Card Style */
+.unauthorized-card {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 15px;
+    background-color: #ffffff; /* White background */
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+}
+
+/* Title Style */
+.unauthorized-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #dc3545; /* Bootstrap danger color */
+    margin-bottom: 1rem;
+}
+
+/* Text Style */
+.unauthorized-text {
+    font-size: 1.1rem;
+    color: #6c757d; /* Muted text color */
+}
+
+/* Button Style */
+.unauthorized-btn {
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+}
+
+.unauthorized-btn:hover {
+    background-color: #0056b3; /* Darker primary color */
+    border-color: #0056b3;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Centering the Button */
+.text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

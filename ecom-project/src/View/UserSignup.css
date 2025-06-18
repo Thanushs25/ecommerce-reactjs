@@ -1,0 +1,202 @@
+/* Overall Page Wrapper */
+.signup-wrapper {
+    padding-top: 75px; /* Adjust based on NavigationBar height */
+    padding-bottom: 50px;
+    background-color: #f8f9fa; /* Light background for signup page */
+    min-height: calc(100vh - 56px); /* Full viewport height minus nav */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+}
+
+/* Signup Card Style */
+.signup-card {
+    border: none; /* No border for a cleaner look */
+    border-radius: 15px; /* Rounded corners for modern feel */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Pronounced shadow */
+    max-width: 450px; /* Optimal width for a signup form */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff; /* White background */
+}
+
+/* Signup Title */
+.signup-title {
+    color: #4d2e01 !important; /* A darker, softer grey for the text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow effect */
+    letter-spacing: 0.5px; /* Slightly increase spacing between letters */
+    font-weight: 700; /* Ensure it's bold */
+    padding-bottom: 10px; /* Add some space below the title */
+    border-bottom: 2px solid #d4a373 !important; /* A subtle underline using your accent color */
+    display: inline-block;
+}
+
+/* Form Labels with Icons */
+.signup-label {
+    font-weight: 600; /* Semi-bold */
+    color: #495057;
+    display: flex; /* Allow icon and text to align */
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.signup-label svg {
+    font-size: 1.1em; /* Adjust icon size */
+    color:#4d2e01;  /* Muted icon color */
+}
+
+/* Form Inputs */
+.signup-input {
+    border-radius: 10px; /* Consistent with card and button rounding */
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #dee2e6;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.signup-input:focus {
+    border-color:#4d2e01;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    translate: translateY(-1px);
+}
+
+.signup-input.is-invalid {
+    border-color: var(--bs-danger);
+}
+
+.signup-input + .invalid-feedback {
+    font-size: 0.875em;
+    color: var(--bs-danger);
+    margin-top: 0.25rem;
+}
+
+/* Signup Button */
+.signup-btn {
+    font-weight: 600; /* Semi-bold */
+    padding: 12px 25px; /* More substantial button */
+    border-radius: 10px; /* Consistent rounding */
+    transition: all 0.2s ease-in-out;
+    background-color: #687865; /* Default background */
+    border-color: #6c757d;
+    color: #fff;
+}
+
+.signup-btn:hover {
+    background-color: transparent;
+    border: 1px solid #687865;
+    color: #687865;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    translate: translateY(-1px);
+}
+
+.signup-btn:active {
+    background-color: #687865 !important; /* Keep the original background color on click/active */
+    border-color: #687865 !important; /* Adjust border to match */
+    color: #fff !important; /* Ensure text remains white */
+    box-shadow: none !important; /* Remove any active box shadow if present */
+    transform: none !important; /* Remove any active transform if present */
+}
+
+.signup-btn:disabled {
+    background-color: #687865 !important; /* Keep the original background color when disabled */
+    border-color: #6c757d !important; /* Keep the original border color */
+    color: #fff !important; /* Ensure text remains white */
+    opacity: 0.7; /* Keep the desired opacity */
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* If you have a :focus state that also causes issues */
+.signup-btn:focus {
+    outline: none !important; /* Remove default focus outline */
+    box-shadow: 0 0 0 0.25rem rgba(104, 120, 101, 0.5) !important; /* Custom focus ring using your color */
+    background-color: #687865 !important; /* Ensure background stays for focus too */
+    border-color: #687865 !important;
+    color: #fff !important;
+}
+
+/* Success Alert */
+.signup-alert {
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 15px 20px;
+    font-weight: 500;
+}
+
+/* Login Link Text */
+.signup-login-text {
+    color: #6c757d; /* Muted text color */
+    font-size: 0.95rem;
+}
+
+.signup-login-link {
+    color: #4d2f01c8; /* Primary color for the link */
+    font-weight: 600; /* Semi-bold link */
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.signup-login-link:hover {
+    color: #4d2e01; /* Darker primary on hover */
+    text-decoration-line: underline;
+  text-decoration-style:solid;
+  text-decoration-thickness: 2px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .signup-wrapper {
+        padding-top: 65px;
+    }
+    .signup-card {
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .signup-title {
+        font-size: 2rem;
+    }
+    .signup-card .p-md-5 {
+        padding: 1.5rem !important;
+    }
+    .signup-btn {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .signup-wrapper {
+        padding-top: 55px;
+        padding-bottom: 30px;
+        justify-content: flex-start; /* Adjust vertical centering for smaller screens */
+    }
+    .signup-card {
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+    .signup-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    .signup-card .p-4 {
+        padding: 1rem !important;
+    }
+    .signup-label svg {
+        font-size: 1em;
+    }
+    .signup-input,
+    .signup-btn {
+        padding: 0.65rem 1rem;
+        font-size: 0.95rem;
+    }
+    .signup-alert {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    .signup-login-text,
+    .signup-login-link {
+        font-size: 0.85rem;
+    }
+}

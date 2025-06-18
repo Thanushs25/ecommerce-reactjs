@@ -1,0 +1,302 @@
+/* src/pages/OrderDetails.css */
+
+/* Import the shared admin layout styles */
+@import '../sideBar/AdminSidebar.css'; /* Contains .admin-sidebar-new styles */
+@import '../../View/AdminDashboard.css'; /* Contains .admin-layout-wrapper, .admin-layout-main-content, .admin-main-title, etc. */
+
+/* Specific styles for the OrderDetails page content */
+
+/* General Container for Order Details (replaces styled-components Container) */
+/* The main-content-inner already handles padding and max-width */
+/* .order-details-container {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    position: relative;
+    min-height: 600px;
+} */
+
+
+/* Section Header (replaces styled-components SectionHeader) */
+/* The .admin-main-title is already defined in AdminDashboard.css */
+/* .order-section-header {
+    font-size: 2em;
+    color: #343a40;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+    text-align: center;
+} */
+
+/* Filter Container (replaces styled-components FilterContainer) */
+.order-filter-container {
+    display: flex;
+    justify-content: flex-end; /* Align filter to the right */
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee; /* Light separator below filter */
+}
+
+.filter-label {
+    font-size: 1em;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 0; /* Remove default margin from Bootstrap label */
+}
+
+.filter-select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9em;
+    min-width: 150px; /* Slightly wider select */
+    background-color: #f6f4f1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #4d2e01;
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+}
+
+/* Orders Table (replaces styled-components OrdersTable) */
+.orders-table-responsive {
+    overflow-x: auto; /* Make table horizontally scrollable on small screens */
+    border-radius: 10px; /* Apply border-radius to the wrapper */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0; /* Already inside a padded container */
+    min-width: 700px; /* Ensure table doesn't get too small horizontally */
+}
+
+/* Table Header (replaces styled-components TableHeader) */
+.table-header {
+    background-color:#f6f4f1; /* Use Bootstrap primary color */
+    color: #4d2e01;
+    padding: 15px;
+    text-align: left;
+    font-size: 0.95em;
+    font-weight: 600;
+}
+/* For border-radius on headers within the responsive wrapper */
+.orders-table thead tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+.orders-table thead tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+
+
+/* Table Row (replaces styled-components TableRow) */
+.table-row:nth-child(even) {
+    background-color: #f8f9fa; /* Light grey for even rows */
+}
+.table-row:hover {
+    background-color: #e9ecef; /* Slightly darker hover */
+}
+
+/* Table Data (replaces styled-components TableData) */
+.table-data {
+    padding: 15px;
+    border-bottom: 1px solid #dee2e6;
+    color: #495057;
+    vertical-align: middle;
+    font-size: 0.9em;
+}
+
+/* Action Wrapper (replaces styled-components ActionWrapper) */
+.action-wrapper {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Select for Status (replaces styled-components Select) */
+.status-select {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.85em;
+    min-width: 100px;
+    background-color: #f6f4f1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.status-select:focus {
+    outline: none;
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 3px rgba(var(--bs-primary-rgb), 0.25);
+}
+.status-select:disabled {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+}
+
+/* Update Button (replaces styled-components Button) */
+.update-button {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+.update-button:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.update-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Expand Button (replaces styled-components ExpandButton) */
+.expand-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #000000;
+    transition: transform 0.2s ease;
+    padding: 0;
+}
+.expand-button:hover {
+    transform: scale(1.3);
+    transition: transform 0.4s ease;
+}
+.expand-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Expanded Row (replaces styled-components ExpandedRow) */
+.expanded-row {
+    background-color: #f6f4f1; /* Lighter blue for expanded row */
+}
+.expanded-row > td {
+    padding: 0;
+    border-bottom: 1px solid #f6f4f1;
+}
+
+/* Order Items Container (replaces styled-components OrderItemsContainer) */
+.order-items-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Messages (replaces styled-components SuccessMessage, ErrorMessage) */
+.alert.alert-success { /* Targeting Bootstrap Alert for success */
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.alert.alert-danger { /* Targeting Bootstrap Alert for danger */
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.no-orders-message, .no-items-message {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.1em;
+    color: #777;
+    padding: 20px; /* Add padding for better look */
+    border: 1px dashed #e0e0e0;
+    border-radius: 8px;
+    background-color: #fefefe;
+}
+
+/* Loader text */
+.loading-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: var(--bs-primary);
+    font-weight: 500;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .order-filter-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    .filter-select {
+        width: 100%; /* Full width on small screens */
+        min-width: unset;
+    }
+
+    .table-header, .table-data {
+        font-size: 0.85em;
+        padding: 10px;
+    }
+
+    .action-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .status-select {
+        width: 100%; /* Full width */
+        min-width: unset;
+    }
+
+    .update-button {
+        width: 100%; /* Full width */
+    }
+
+    .expand-button {
+        font-size: 1em;
+    }
+
+    .orders-table-responsive {
+        /* overflow-x: auto is still good */
+    }
+}
+
+@media (max-width: 576px) {
+    .table-header, .table-data {
+        font-size: 0.8em;
+        padding: 8px;
+    }
+
+    /* Hide some columns on very small screens if necessary for readability */
+    /* Example:
+    .orders-table th:nth-child(2),
+    .orders-table td:nth-child(2) {
+        display: none;
+    }
+    */
+}
+
+
+.page-title {
+    color: #4d2e01 !important; /* A darker, softer grey for the text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow effect */
+    letter-spacing: 0.5px; /* Slightly increase spacing between letters */
+    font-weight: 700; /* Ensure it's bold */
+    padding-bottom: 10px; /* Add some space below the title */
+    border-bottom: 2px solid #d4a373 !important; /* A subtle underline using your accent color */
+    display: inline-block; /* Essential for border-bottom to fit content width in text-center */
+}

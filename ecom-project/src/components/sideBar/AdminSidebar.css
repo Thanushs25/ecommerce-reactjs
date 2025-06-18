@@ -1,0 +1,166 @@
+/* src/components/sideBar/AdminSidebar.css */
+
+/* ... (Your existing CSS rules) ... */
+
+.admin-sidebar-new {
+    flex-shrink: 0;
+    width: 250px;
+    background-color: #212529; /* Darker background */
+    color: #e9ecef;
+    min-height: 100vh;
+    position: sticky; /* Keep it sticky on larger screens */
+    top: 0;
+    left: 0;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    border-top: 5px solid #d4a373;
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
+  }
+  
+  /* New CSS for mobile collapse */
+  @media (max-width: 991.98px) { /* Adjust breakpoint as needed, Bootstrap's 'lg' breakpoint is 992px */
+    .admin-sidebar-new {
+      position: fixed; /* Fix position for mobile sidebar */
+      top: 0;
+      left: 0;
+      height: 100vh; /* Take full viewport height */
+      width: 250px; /* Fixed width for the sliding sidebar */
+      transform: translateX(-100%); /* Initially hide the sidebar off-screen */
+      z-index: 1050; /* Ensure it's above other content (like Bootstrap's navbar) */
+      box-shadow: 4px 0 20px rgba(0, 0, 0, 0.4);
+      border-top: none; /* Remove border-top for mobile */
+    }
+  
+    .admin-sidebar-new.open {
+      transform: translateX(0); /* Slide in when 'open' class is present */
+    }
+  
+    .admin-sidebar-toggle-button {
+      position: fixed;
+      top: 15px; /* Adjust as needed */
+      left: 15px; /* Adjust as needed */
+      z-index: 1060; /* Above the sidebar */
+    }
+  
+    /* Optional: Add an overlay when the sidebar is open to dim the content behind it */
+    body.sidebar-open::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1040; /* Below the sidebar, above main content */
+    }
+  }
+  
+  /* Apply the overlay class to the body when the sidebar is open.
+     You'll need a way to add/remove this class in your parent component or directly in AdminSidebar.jsx
+     (e.g., using useEffect to add/remove class to document.body)
+  */
+  
+  /* Existing styles for header, nav, footer remain mostly the same,
+     but ensure no conflicting width/positioning rules for mobile. */
+  
+  .sidebar-header-new {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.1);
+  }
+  
+  .sidebar-brand-new {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  .sidebar-brand-new:hover {
+    color: #d4a373;
+  }
+  
+  .sidebar-brand-new svg {
+    font-size: 1.1em;
+    vertical-align: middle;
+  }
+  
+  .sidebar-nav-new {
+    flex-grow: 1;
+    list-style: none;
+    padding: 0;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  
+  .sidebar-nav-new::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    background: transparent;
+  }
+  
+  .sidebar-nav-new .list-group-item {
+    background-color: transparent;
+    border: none;
+    color: #e9ecef;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 25px;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: inset 0 0 0 0px transparent;
+  }
+  
+  .sidebar-nav-new .list-group-item:hover,
+  .sidebar-nav-new .list-group-item.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transform: translateX(5px);
+    border-left: 5px solid #d4a373;
+    padding-left: calc(1rem - 5px);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .sidebar-nav-new .list-group-item svg {
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .sidebar-nav-new .list-group-item:hover svg,
+  .sidebar-nav-new .list-group-item.active svg {
+    color: #d4a373;
+  }
+  
+  .sidebar-footer-new {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15); /* Re-add border-top for desktop */
+    margin-top: 1.5rem;
+  }
+  
+  .sidebar-logout-btn-new {
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    background-color: var(--bs-danger);
+    border-color: var(--bs-danger);
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sidebar-logout-btn-new:hover {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    opacity: 0.9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }

@@ -1,0 +1,44 @@
+/* CustomCarousel.css */
+
+.carousel-fixed-height-img {
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Styles for carousel caption positioning and initial animation state */
+.carousel-caption {
+  bottom: 140px;
+  left: 20%;
+  right: auto;
+  text-align: left;
+  width: 40%;
+  color: white; /* Text color remains white for contrast */
+
+  /* Animation properties: Initially hidden and slightly rotated */
+  opacity: 0;
+  transform: rotateX(-30deg); /* Start rotated on the X-axis */
+  transform-origin: bottom center; /* Set pivot point for rotation */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Smooth transition for fade and rotate */
+}
+
+/* Styles for the caption when its parent carousel item is active (animation target) */
+.carousel-item.active .carousel-caption {
+  opacity: 1; /* Fades in to fully visible */
+  transform: rotateX(0deg); /* Rotates to its normal position */
+}
+
+
+/* Styles for the text within the caption (font size and text shadow) */
+.carousel-caption h5 {
+  font-size: 3.5rem;
+  color: white; /* Explicitly set to white */
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Subtle dark shadow for readability */
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  color: white; /* Explicitly set to white */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Subtle dark dark shadow for readability */
+}

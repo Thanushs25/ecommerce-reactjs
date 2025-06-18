@@ -1,0 +1,24 @@
+/* Custom CSS for FixedCarousel */
+.fixed-carousel-container {
+    width: 100%; /* Take full width of its column */
+    max-width: 600px; /* Max width for larger screens to prevent image distortion */
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f8f9fa; /* Light background for images */
+    display: flex; /* To vertically center if image is smaller */
+    align-items: center; /* Vertically center image */
+    justify-content: center; /* Horizontally center image */
+}
+
+.fixed-carousel-img {
+    height: 450px; /* Fixed height for the main image */
+    object-fit: contain; /* Ensures the whole image is visible within the frame */
+    padding: 20px; /* Padding inside the container for the image */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .fixed-carousel-img {
+        height: 300px; /* Shorter height on mobile */
+    }
+}

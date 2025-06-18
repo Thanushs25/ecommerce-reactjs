@@ -1,0 +1,101 @@
+/* src/components/review/AddReviewForm.css */
+
+/* Main Form Container */
+.add-review-form {
+    background-color: #ffffff; /* Clean white background */
+    border: 1px solid #e0e0e0; /* Softer, subtle border */
+    border-radius: 0.75rem; /* Slightly larger border-radius for a softer look */
+    padding: 2.5rem; /* Generous padding inside the form */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+    max-width: 600px; /* Constrain width for better readability and design */
+    margin: 2rem auto; /* Center the form on the page with some top/bottom margin */
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /* Professional font stack */
+}
+
+/* Form Elements (Labels, Inputs, Textareas) - Assuming standard HTML elements */
+.add-review-form label {
+    display: block; /* Make labels take full width for better stacking */
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #343a40; /* Darker text for readability */
+    font-weight: 500; /* Slightly bolder for labels */
+}
+
+.add-review-form input[type="text"],
+.add-review-form input[type="email"], /* Add other input types as needed */
+.add-review-form textarea {
+    width: 100%; /* Full width within the padding */
+    padding: 0.85rem 1rem; /* Comfortable padding inside fields */
+    margin-bottom: 1.5rem; /* Space below each field */
+    border: 1px solid #ced4da; /* Subtle border for inputs */
+    border-radius: 0.4rem; /* Slightly rounded corners for inputs */
+    font-size: 1rem;
+    color: #495057;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for focus */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+.add-review-form input[type="text"]:focus,
+.add-review-form input[type="email"]:focus,
+.add-review-form textarea:focus {
+    border-color: #657868; /* Focus border color matches your button */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 0.2rem rgba(101, 120, 104, 0.25); /* Subtle focus shadow */
+}
+
+.add-review-form textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 120px; /* Minimum height for textarea */
+}
+
+/* Star Rating Section */
+.star-rating-container {
+    margin-bottom: 1.5rem; /* Space below the stars */
+}
+
+.star {
+    margin-right: 3px; /* Slightly increased space between stars */
+    font-size: 1.75rem; /* Larger stars for better visibility */
+    color: #e9ecef; /* Default empty star color - a light gray */
+    cursor: pointer;
+    transition: color 0.2s ease-in-out; /* Smooth transition for hover/fill */
+}
+
+.star.filled {
+    color: #ffc107; /* Bootstrap's warning yellow for filled stars */
+}
+
+/* Button Style */
+.add-review-form button {
+    background-color: #657868; /* Your specified button color */
+    color: #ffffff; /* White text for contrast */
+    border: none; /* Remove default border */
+    border-radius: 0.4rem; /* Match input field border-radius */
+    padding: 0.9rem 1.75rem; /* Comfortable padding for the button */
+    font-size: 1.1rem;
+    font-weight: 600; /* Slightly bolder text for the button */
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transitions */
+    width: 100%; /* Make button full width within its container */
+}
+
+.add-review-form button:hover {
+    background-color: #536456;
+    color: #fff; /* Slightly darker on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+}
+
+.add-review-form button:active {
+
+    background-color: #455248;
+    color: #fff; /* Even darker when clicked */
+    transform: translateY(1px); /* Slight press effect */
+}
+
+/* Optional: Error message styling (if applicable) */
+.error-message {
+    color: #dc3545; /* Bootstrap danger red */
+    font-size: 0.875rem;
+    margin-top: -1rem; /* Adjust if needed to align with input */
+    margin-bottom: 1rem;
+}

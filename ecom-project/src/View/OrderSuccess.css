@@ -1,0 +1,165 @@
+/* src/components/OrderSuccess.css */
+
+/* Overall Page Wrapper */
+.order-success-wrapper {
+    padding-top: 75px; /* Adjust based on your NavigationBar height */
+    padding-bottom: 50px;
+    background-color: #f8f9fa; /* Light, clean background */
+    min-height: calc(100vh - 56px); /* Full viewport height minus nav */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+}
+
+/* Success Card Style */
+.order-success-card {
+    border: 1px solid #e0e0e0; /* Softer border */
+    border-radius: 12px; /* Slightly rounded corners */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for emphasis */
+    max-width: 500px; /* Consistent max-width for forms/messages */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff; /* White background */
+}
+
+/* Success Icon */
+.order-success-icon {
+    font-size: 4rem; /* Large icon */
+    color: var(--bs-success); /* Bootstrap success green */
+    animation: fade-in-up 0.8s ease-out; /* Subtle animation */
+}
+
+/* Success Title */
+.order-success-title {
+    font-size: 2.2rem; /* Prominent title */
+    font-weight: 700; /* Extra bold */
+    color: var(--bs-success); /* Green for success */
+    letter-spacing: 0.8px;
+    line-height: 1.3;
+    animation: fade-in-up 1s ease-out; /* Subtle animation */
+}
+
+/* Success Messages */
+.order-success-message {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    animation: fade-in-up 1.2s ease-out; /* Subtle animation */
+}
+
+.order-success-delivery {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #343a40; /* Darker text for emphasis */
+    margin-bottom: 2rem;
+    animation: fade-in-up 1.4s ease-out; /* Subtle animation */
+}
+
+.order-success-delivery strong {
+    color: var(--bs-primary); /* Highlight the days in primary color */
+    font-weight: 700;
+}
+
+
+/* Button Styling (reusing concept from Address/Payment) */
+.order-success-btn {
+    /* font-weight: 500; */
+    padding: 10px 25px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    background-color: #4d2e01;
+    color: #ffffff;
+    border-color: #e0e0e0;
+}
+
+.order-success-btn:hover{
+    background-color: transparent;
+    
+    border: 1px solid #4d2e01;
+    color: #4d2e01; /* Darker on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    translate: translateY(-1px); /* Subtle lift */
+}
+
+
+.order-success-btn:active{
+    background-color: transparent !important;
+    
+    border: 1px solid #4d2e01 !important;
+    color: #4d2e01 !important; /* Darker on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    translate: translateY(-1px); /* Subtle lift */
+}
+
+/* Animations */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .order-success-wrapper {
+        padding-top: 65px;
+    }
+    .order-success-icon {
+        font-size: 3.5rem;
+    }
+    .order-success-title {
+        font-size: 1.8rem;
+    }
+    .order-success-message {
+        font-size: 1rem;
+    }
+    .order-success-delivery {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+    .order-success-card .p-md-5 {
+        padding: 1.5rem !important;
+    }
+    .order-success-btn {
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .order-success-wrapper {
+        padding-top: 55px;
+        padding-bottom: 30px;
+        justify-content: flex-start; /* Adjust vertical centering for smaller screens */
+    }
+    .order-success-card {
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    .order-success-icon {
+        font-size: 3rem;
+        margin-bottom: 1.5rem !important;
+    }
+    .order-success-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem !important;
+    }
+    .order-success-message {
+        font-size: 0.95rem;
+    }
+    .order-success-delivery {
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+    }
+    .order-success-card .p-4 {
+        padding: 1rem !important;
+    }
+    .order-success-btn {
+        font-size: 0.9rem;
+    }
+}

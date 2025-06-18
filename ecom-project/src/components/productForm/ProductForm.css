@@ -1,0 +1,65 @@
+/* src/components/productForm/ProductForm.css */
+
+/* Custom styles for the main form container */
+.product-add-form {
+    background-color: #65786808; /* Keep light, warm off-white */
+    border: 1px solid #d4a373; /* Muted earthy brown border */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05); /* Soft shadow */
+}
+
+
+
+/* Styling for labels */
+.form-label.fw-semibold.text-muted {
+    color: #6a5e51; /* Darker, warm grey for labels */
+    font-weight: 600;
+}
+
+/* Custom styles for 'Add Another Variant' button (Outline/Secondary Action) */
+.btn-outline-primary.btn-lg {
+    border-color: #d4a373; /* Main accent color for border */
+    color: #d4a373; /* Main accent color for text */
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-outline-primary.btn-lg:hover {
+    border-color: #e0c8b6; /* Lighter border on hover */
+    background-color: #d4a373; /* Fill with accent color on hover */
+    color: rgb(255, 255, 255); /* White text on hover */
+    box-shadow: 0 4px 8px rgba(212, 163, 115, 0.4); /* Accent color shadow */
+}
+
+/* Custom styles for 'Add Product' button (Primary Action) */
+.btn-success.btn-lg {
+    background-color: #a47b59; /* Deeper, rich brown */
+    border-color: #a47b59; /* Matching border */
+    color: white; /* White text for contrast */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.btn-success.btn-lg:hover {
+    background-color: #d4a373 !important; /* Lighter accent brown on hover */
+    border-color: #d4a373 !important; /* Matching border on hover */
+    color: #3b2a20 !important; /* Dark text for contrast on lighter background */
+    box-shadow: 0 4px 8px rgba(165, 89, 17, 0.2);
+}
+
+/* Adjusting input field focus */
+.form-control:focus, .form-select:focus {
+    border-color: #d4a373; /* Focus border aligns with accent */
+    box-shadow: 0 0 0 0.25rem rgba(212, 163, 115, 0.25); /* Accent color shadow */
+}
+
+.product-form-title {
+    color: #4d2e01; /* A darker, softer grey for the text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    letter-spacing: 0.5px; /* Slightly increase spacing between letters */
+    font-weight: 700; /* Ensure it's bold */
+    padding-bottom: 10px; /* Add some space below the title */
+    border-bottom: 2px solid #d4a373; /* A subtle underline that matches your accent color */
+    display: inline-block; /* Essential for border-bottom to fit content width in text-center */
+}

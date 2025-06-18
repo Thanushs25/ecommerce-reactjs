@@ -1,0 +1,280 @@
+/* VariantCarousel.css */
+ 
+/* --- Carousel Specific Styles --- */
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the carousel container */
+    padding: 0 50px; /* Add padding for buttons to sit outside */
+}
+ 
+.variant-carousel-container {
+    overflow: hidden; /* Hide overflowing cards */
+    width: 100%; /* Take full width within the wrapper's padding */
+}
+ 
+.carousel-row {
+    display: flex; /* Ensure flexbox for horizontal layout */
+    transition: transform 0.3s ease-in-out; /* Smooth scrolling effect */
+    transform: translateX(0); /* Initial position */
+    /* This transform property will be dynamically updated by JavaScript if you implement
+       smooth sliding (not just slicing). For slicing, overflow: hidden and fixed column widths are key. */
+}
+ 
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #657868; /* Use your main accent color */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%; /* Make them round */
+    width: 45px; /* Fixed width */
+    height: 45px; /* Fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+.carousel-control:hover {
+    background-color: #536456; /* Darker shade on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+ 
+.carousel-control.prev {
+    left: 0; /* Position at the left edge of the padding */
+}
+ 
+.carousel-control.next {
+    right: 0; /* Position at the right edge of the padding */
+}
+ 
+.carousel-control:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+ 
+/* Ensure cards maintain their size and spacing within the carousel */
+.variant-carousel-container .col {
+    flex: 0 0 25%; /* Show 4 cards per row (100% / 4) */
+    max-width: 25%; /* Max width for each card */
+    padding: 0 10px; /* Add some padding between cards */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+ 
+/* --- Your Original Styles (Integrated) --- */
+ 
+.cart-log-btn {
+    background-color: #657868; /* Main accent color */
+    color: #fff;
+    border: none;
+    transition: background-color 0.2s ease;
+    border-radius: 10px; /* Simplified border-radius */
+    padding: 1rem;
+    width: 100%; /* Ensure button takes full width within card */
+}
+ 
+.cart-log-btn:hover {
+    background-color: transparent;
+    border: 1px solid #536456; /* Slightly darker shade on hover for a subtle effect */
+    color: #536456;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transform: translateY(-1px); /* Slight lift effect on hover */
+}
+ 
+.cart-log-btn:disabled {
+    background-color: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+    border: none; /* Remove hover border if disabled */
+    box-shadow: none;
+    transform: none; /* Remove transform if disabled */
+}
+ 
+ 
+.variant-card {
+    border: 1px solid #e0e0e0; /* Subtle border, consistent with LandingBody */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Soft shadow, slightly lighter than main cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    background-color: #fff; /* White background */
+    display: flex; /* Use flexbox for consistent card body layout */
+    flex-direction: column; /* Stack content vertically */
+    height: 100%; /* Ensure cards fill their column height */
+}
+ 
+.variant-card:hover {
+    transform: translateY(-3px); /* Slightly lift effect on hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Stronger shadow on hover */
+}
+ 
+.variant-card .card-body {
+    padding: 20px; /* Generous padding inside the card body */
+    text-align: left; /* Align text to the left for better readability of details */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure card body takes full height */
+}
+ 
+.variant-card .card-title {
+    font-size: 1.15rem; /* Slightly smaller than main product titles, but still prominent */
+    font-weight: 700; /* Bolder for titles */
+    color: #AB9682; /* Darker color for titles */
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    min-height: 48px; /* Added to prevent layout shifts if titles vary in length */
+}
+ 
+.variant-card .card-text {
+    font-size: 0.95rem; /* Readable font size for details */
+    color: #555; /* Muted color for descriptions */
+    margin-bottom: 5px; /* Smaller margin for list-like attributes */
+    font-family: 'Inter', sans-serif;
+}
+ 
+.variant-card .card-text.fs-5 {
+    font-size: 1.3rem !important; /* Emphasize price */
+    font-weight: 700;
+    color: #28a745; /* Success green for price */
+    margin-top: auto; /* Pushes price and status to the bottom */
+    margin-bottom: 10px; /* Space before status */
+}
+ 
+.variant-card .card-text.fw-semibold {
+    font-size: 0.95rem;
+    margin-bottom: 15px; /* Space before quantity input */
+}
+ 
+/* Quantity input styling */
+.variant-card .form-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 5px;
+}
+ 
+.variant-card .quantity-input {
+    width: 80px; /* Fixed width for quantity input */
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 0.375rem 0.75rem; /* Bootstrap's default form control padding */
+}
+ 
+.variant-card .quantity-input:focus {
+    border-color: #000000;
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+}
+ 
+/* Button styling (using a general .btn-warning class for consistency with your existing code) */
+/* The button tag in the React component has `variant="warning"` which would apply Bootstrap's .btn-warning styles.
+   If you want your custom `cart-log-btn` to override Bootstrap's, ensure its specificity is higher or remove `variant="warning"`
+   from the button. I've kept your specific .cart-log-btn styles. */
+.variant-card .btn-warning {
+    /* These styles will apply if you use a Bootstrap Button component with variant="warning" */
+    background-color: #ffc107; /* Consistent warning color */
+    border-color: #ffc107;
+    color: #212529; /* Dark text for warning button */
+    font-weight: 600;
+    padding: 10px 15px;
+    font-size: 1rem;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+ 
+.variant-card .btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #d39e00;
+}
+ 
+.variant-card .btn-warning:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+ 
+ 
+/* Alert for no variants/login */
+.variant-card .alert {
+    font-size: 0.95rem;
+    padding: 10px 15px;
+    margin-top: auto; /* Pushes alert to the bottom */
+}
+ 
+ 
+/* Responsive adjustments for columns within the carousel */
+/* These media queries adjust how many cards are visible per row based on screen size,
+   overriding the default Bootstrap column behavior for the carousel. */
+@media (max-width: 1200px) { /* For 'lg' and smaller */
+    .variant-carousel-container .col {
+        flex: 0 0 33.33%; /* Show 3 cards per row */
+        max-width: 33.33%;
+    }
+}
+ 
+@media (max-width: 992px) { /* For 'md' and smaller */
+    .variant-carousel-container .col {
+        flex: 0 0 50%; /* Show 2 cards per row */
+        max-width: 50%;
+    }
+    .variant-card .card-body {
+        padding: 15px;
+    }
+    .variant-card .card-title {
+        font-size: 1.1rem;
+    }
+    .variant-card .card-text {
+        font-size: 0.9rem;
+    }
+    .variant-card .card-text.fs-5 {
+        font-size: 1.2rem !important;
+    }
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+    }
+}
+ 
+@media (max-width: 768px) { /* For 'sm' and smaller */
+    .variant-carousel-container .col {
+        flex: 0 0 100%; /* Show 1 card per row */
+        max-width: 100%;
+    }
+    .carousel-wrapper {
+        padding: 0 20px; /* Reduce padding for smaller screens */
+    }
+    .carousel-control {
+        width: 35px;
+        height: 35px;
+        font-size: 1.1rem;
+    }
+}
+ 
+@media (max-width: 576px) { /* For 'xs' */
+    .variant-card .card-body {
+        padding: 15px;
+    }
+    .variant-card .card-title {
+        font-size: 1rem;
+    }
+    .variant-card .card-text {
+        font-size: 0.85rem;
+    }
+    .variant-card .card-text.fs-5 {
+        font-size: 1.1rem !important;
+    }
+    .variant-card .quantity-input {
+        width: 70px;
+    }
+    .cart-log-btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}

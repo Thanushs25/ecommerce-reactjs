@@ -1,0 +1,51 @@
+.products-container { /* <--- Apply it to the specific container that holds your cards */
+    background-color: #F7D9BC;
+    /* You might add padding or other styling here for the container itself */
+    padding: 2rem;
+}
+
+/* Your existing CSS for product card actions and buttons remains unchanged below this */
+.product-card-actions {
+    border-top: 1px solid #EAE0D1;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.product-action-btn {
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.product-action-btn.btn-outline-primary {
+    color: #AB9682;
+    border-color: #AB9682;
+}
+.product-action-btn.btn-outline-primary:hover {
+   background-color: rgb(165, 89, 17);
+   color: #fff;
+    border-color: rgb(165, 89, 17);
+}
+
+.product-action-btn.btn-outline-danger {
+    color: #ff0000;
+    border-color: #ff0000;
+}
+.product-action-btn.btn-outline-danger:hover {
+   background-color: #ff0a27;
+   color: #fff;
+}
+.product-card-title {
+    height: 50px;
+    color: #4d2e01 !important; /* A darker, softer grey for the text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    letter-spacing: 0.5px; /* Slightly increase spacing between letters */
+    font-weight: 700; /* Ensure it's bold */
+    padding-bottom: 10px; /* Add some space below the title */
+    border-bottom: 2px solid #d4a373; /* A subtle underline that matches your accent color */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 3 lines. Adjust as needed. */
+    -webkit-box-orient: vertical;
+}

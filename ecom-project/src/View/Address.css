@@ -1,0 +1,176 @@
+/* Address.css */
+
+/* General page wrapper for consistency with NavigationBar */
+.address-container-wrapper {
+    padding-top: 75px; /* Adjust based on your NavigationBar height */
+    padding-bottom: 50px;
+    background-color: #f8f9fa; /* Lighter, clean background */
+    min-height: calc(100vh - 56px); /* Full viewport height minus nav */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+/* Main Card styling for AddressDisplay and AddAddress */
+.address-card {
+    border: 1px solid #d7d4b9; /* Softer border */
+    border-radius: 12px; /* Slightly rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    max-width: 550px; /* Max width for readability, slightly smaller */
+    width: 100%;
+    /* Key change for centering: */
+    margin-left: auto;
+    margin-right: auto;
+    /* Or, if using Bootstrap utilities in JSX: className="mx-auto" on the Card */
+}
+
+/* Card Titles */
+.address-card-title {
+    color: #4d2e01 !important; /* A darker, softer grey for the text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow effect */
+    letter-spacing: 0.5px; /* Slightly increase spacing between letters */
+    font-weight: 700; /* Ensure it's bold */
+    padding-bottom: 10px; /* Add some space below the title */
+    border-bottom: 2px solid #d4a373 !important; /* A subtle underline using your accent color */
+    display: inline-block;
+}
+
+/* Address Display Box */
+.address-details-box {
+    background-color: #e8ecf00f; /* White background for the address box */
+    border: 1px solid #AB9682; /* Light gray border */
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.address-details-box p {
+    font-size: 1.15rem; /* Readable font size */
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Buttons */
+.address-btn,
+.address-btn-outline {
+    font-weight: 500; /* Regular bold */
+    padding: 10px 25px; /* Consistent padding */
+    border-radius: 8px; /* Slightly rounded, not pill-shaped */
+    transition: all 0.2s ease-in-out;
+    min-width: 150px; /* Ensure consistent width for buttons in group */
+}
+
+.address-btn { /* Solid primary button */
+    background-color:#4d2e01;
+    /* border-color:#ab968213;
+    color: #fff; */
+    border:#4d2e01; /* Primary border for outline */
+    color: #ffffff;
+}
+
+.address-btn:hover {
+    background-color: transparent;
+    border:1px solid #4d2e01;
+    color: #4d2e01;
+    transform: translateY(-1px); /* Subtle lift */
+}
+
+.address-btn-outline {
+    
+    background-color: #657868;
+    border: #657868;
+    color: #fff;/* Outline button */
+    
+}
+
+.address-btn-outline:hover {
+    background-color: transparent;
+    border: 1px solid #587a5d; /* Primary border for outline */
+    color: #657868;
+    transform: translateY(-1px); /* Subtle lift */
+}
+
+/* Form Specifics (for AddAddress) */
+.address-card .form-label {
+    font-weight: 500;
+    color: #495057;
+}
+
+.address-card .form-control {
+    border-radius: 8px; /* Consistent border-radius for inputs */
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+}
+
+.address-card .form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25); /* Primary focus ring */
+}
+
+.address-card .invalid-feedback {
+    font-size: 0.875em;
+    color: var(--bs-danger);
+}
+
+/* Spinner and Alerts */
+.address-card .spinner-border {
+    color: var(--bs-primary); /* Primary spinner */
+}
+
+.address-card .alert {
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .address-container-wrapper {
+        padding-top: 65px;
+    }
+    .address-card-title {
+        font-size: 1.8rem;
+    }
+    .address-details-box p {
+        font-size: 1rem;
+    }
+    .address-btn,
+    .address-btn-outline {
+        min-width: unset; /* Remove min-width to allow full width stacking */
+        width: 100%; /* Make buttons full width when stacked */
+    }
+    .address-card .p-md-5 {
+        padding: 1.5rem !important; /* Adjust padding for medium screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .address-container-wrapper {
+        padding-top: 55px;
+        padding-bottom: 30px;
+    }
+    .address-card {
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    .address-card-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .address-details-box {
+        padding: 15px;
+    }
+    .address-details-box p {
+        font-size: 0.95rem;
+    }
+    .address-btn,
+    .address-btn-outline {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        border-radius: 6px;
+    }
+    .address-card .p-4 {
+        padding: 1rem !important; /* Adjust padding for small screens */
+    }
+}

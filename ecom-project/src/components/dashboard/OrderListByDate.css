@@ -1,0 +1,14 @@
+/* src/components/OrderListByDate.css (or wherever you place it) */
+
+.filter-button {
+    background-color: #d4a373; /* Your desired background color (earthy brown accent) */
+    border-color: #d4a373;     /* Matching border color */
+    color: white;              /* Text color for contrast */
+    transition: background-color 0.5s ease, border-color 0.3s ease; /* Smooth transition */
+}
+
+.filter-button:hover {
+    background-color: #4d2e01 !important; /* A slightly darker shade for hover (rich brown) */
+    border-color: #a47b59;     /* Matching border on hover */
+    color: white;              /* Keep text white on hover */
+}

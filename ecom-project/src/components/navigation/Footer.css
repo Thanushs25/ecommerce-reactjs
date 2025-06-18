@@ -1,0 +1,200 @@
+/* src/components/Footer/Footer.css */
+
+.app-footer {
+    /* Adjusted background to a dark brown/charcoal that complements the overall theme */
+    background-color: #3C3633; /* Dark charcoal/brown */
+    color: #f8f8f8; /* Light text for contrast */
+    font-family: 'Poppins', sans-serif; /* Consistent font */
+    padding-top: 60px; /* Increased padding top */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow at the top */
+}
+
+.app-footer .container {
+    max-width: 1200px; /* Max width for content */
+}
+
+.footer-brand-name {
+    /* Changed brand name color to a light version of your accent or a complementary color */
+    font-family: 'Poppins', sans-serif; /* Keep consistent with body font for simplicity unless specific brand font is desired */
+    font-size: 2.2rem; /* Larger brand name */
+    font-weight: 700;
+    color: #FDF5E6; /* Light cream/off-white, matching your navbar background */
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(253, 245, 230, 0.2); /* Subtle glow from the light color */
+}
+
+.footer-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.7); /* Slightly muted white for body text */
+}
+
+.footer-heading {
+    font-size: 1.15rem; /* Slightly larger heading for columns */
+    font-weight: 700;
+    color: #ffffff; /* Pure white for headings */
+    margin-bottom: 25px; /* More space below heading */
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px; /* Short underline */
+    height: 3px;
+    /* Adjusted underline color to match your brown/orange accent */
+    background-color: #AB9682; /* Your primary accent color */
+    border-radius: 2px;
+}
+
+.footer-links li {
+    margin-bottom: 12px; /* More space between links */
+}
+
+.footer-link-item {
+    color: rgba(255, 255, 255, 0.7); /* Muted white for links */
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 0;
+}
+
+.footer-link-item:hover {
+    /* Adjusted link hover color to your primary accent or a slightly darker brown/orange */
+    color: rgb(165, 89, 17); /* Your existing hover color from navbar */
+    padding-left: 8px; /* Slight indent on hover */
+}
+
+.footer-link-item::before {
+    content: '\203A'; /* Unicode for single right angle quote (>) */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease, left 0.3s ease;
+    color: #ffffff; /* Arrow color */
+    font-weight: bold;
+}
+
+.footer-link-item:hover::before {
+    opacity: 1;
+    left: -15px; /* Adjust this value to control how far left the arrow goes */
+}
+
+.social-icons-container {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px; /* Space between icons */
+}
+
+.social-icon {
+    /* Adjusted social icon color to your primary accent */
+    color: #AB9682; /* Your primary accent color */
+    font-size: 1.5rem; /* Larger social icons */
+    border: 1px solid #AB9682; /* Border matching accent */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    /* Adjusted social icon hover background and text color */
+    background-color: #AB9682; /* Fill with accent on hover */
+    color: #3C3633; /* Dark background color for icon text on hover */
+    box-shadow: 0 0 15px rgba(171, 150, 130, 0.5); /* Subtle glow from accent color */
+}
+
+.footer-bottom {
+    /* Adjusted background to a slightly lighter shade of the main footer background */
+    background-color: #4D4745; /* Slightly lighter charcoal/brown */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.copyright-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6); /* Muted white for copyright text */
+    margin-bottom: 0;
+}
+
+.payment-icons-container {
+    display: flex;
+    gap: 15px; /* Space between payment icons */
+}
+
+.payment-icon {
+    font-size: 2.2rem; /* Larger payment icons */
+    color: rgba(255, 255, 255, 0.8); /* Slightly muted white for payment icons */
+    transition: color 0.3s ease;
+}
+
+.payment-icon:hover {
+    /* Adjusted payment icon hover color to your primary accent */
+    color: rgb(165, 86, 17); /* Your primary accent color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .app-footer .py-5 {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+    .footer-heading {
+        margin-top: 30px;
+        text-align: center;
+    }
+    .footer-heading::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .footer-col-info {
+        text-align: center;
+    }
+    .social-icons-container {
+        justify-content: center;
+    }
+    .footer-links {
+        text-align: center;
+        padding-left: 0;
+    }
+    .footer-link-item:hover::before {
+        left: 50%; /* Center the arrow on hover for centered text */
+        transform: translate(-50%, -50%);
+    }
+    .footer-link-item {
+        padding-left: 0;
+    }
+    .footer-bottom {
+        text-align: center;
+    }
+    .payment-icons-container {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .app-footer .container .row > div {
+        margin-bottom: 30px; /* More spacing between columns on smaller screens */
+    }
+    .app-footer .container .row > div:last-child {
+        margin-bottom: 0;
+    }
+    .app-footer {
+        padding-top: 40px;
+    }
+}

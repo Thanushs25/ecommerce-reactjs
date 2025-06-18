@@ -1,0 +1,281 @@
+/* src/pages/CartPage.css */
+
+/* --- Page Container --- */
+.cart-page-container {
+  max-width: 960px; /* Constrain width for better readability */
+  margin: 5rem auto 3rem auto; /* Top, auto left/right, bottom margin */
+  padding: 0 1.5rem; /* Horizontal padding for smaller screens */
+  font-family: 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /* Consistent font */
+  color: #333; /* Default text color */
+}
+
+.cart-page-container h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #212529;
+  text-align: center;
+  margin-bottom: 3rem; /* More space below heading */
+  margin-top: 8rem;
+  position: relative;
+}
+
+.cart-page-container h1::after {
+  content: '';
+  display: block;
+  width: 80px; /* Underline effect for the main title */
+  height: 4px;
+  background-color: #657868; /* Matches your accent color */
+  margin: 1rem auto 0; /* Center the underline */
+  border-radius: 2px;
+}
+
+/* --- Loading and Empty Cart States --- */
+.cart-page-container.text-center {
+  padding: 10rem 0; /* More vertical space for loading/empty messages */
+  font-size: 1.5rem;
+  color: #6c757d;
+}
+
+.cart-page-container > p { /* Styles for "Your cart is empty." */
+  font-size: 1.2rem;
+  color: #6c757d;
+  text-align: center;
+  padding: 3rem;
+  background-color: #f8f9fa;
+  border-radius: 0.75rem;
+  border: 1px dashed #dee2e6;
+  margin-top: 3rem; /* Space from the title */
+}
+
+/* --- Cart Items List --- */
+.cart-items-list {
+  background-color: #ffffff; /* Clean background for the list */
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07); /* Consistent shadow with product cards */
+  padding: 2rem; /* Internal padding for the list container */
+  margin-bottom: 2rem; /* Space below the list and above the new summary card */
+}
+
+/* Styles for individual CartItem component are typically in CartItems.css */
+/* Ensure CartItem.css complements this design with subtle borders, shadows, etc. */
+
+/* --- Total Price Section (Keeping as is, but it might be redundant now) --- */
+/* Note: This section might be redundant if the new .order-summary-card completely replaces it.
+ Consider removing this if the JSX no longer uses .total-price. */
+.total-price {
+  background-color: #f8f9fa; /* Light background for price summary */
+  border-radius: 0.75rem;
+  padding: 1.5rem 2rem; /* Padding for the price box */
+  border: 1px solid #e9ecef; /* Subtle border */
+  display: flex;
+  justify-content: flex-end; /* Align total price to the right */
+  align-items: center;
+  margin-top: 2rem; /* Space above the total price box */
+}
+
+.total-price h4 {
+  font-size: 1.8rem; /* Prominent total price */
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 0; /* Remove default margin */
+}
+
+/* --- Place Order Button --- */
+.cart-page-container .btn.btn-success {
+  background-color: #657868; /* Your specified accent color */
+  border-color: #657868;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 500;/* Larger button text */
+  padding: 0.9rem 2rem; /* Generous padding */
+  border-radius: 0.5rem; /* Rounded corners */
+  width: 50%; /* Full width button */
+  display: block;
+  margin: auto;/* Ensure it takes full width */
+  margin-top: 2.5rem; /* Space above the button */
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.cart-page-container .btn.btn-success:hover {
+  background-color: transparent;
+  border: 1px solid #657868; 
+  color: #657868;/* Slightly darker on hover */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  translate: translateY(-1px);/* Subtle shadow on hover */
+}
+
+.add-cart-btn{
+  background-color:#657868;
+  border: 1px solid #657868; 
+  color: #ffffff;
+}
+
+.add-cart-btn:hover{
+  border: 1px solid #657868; 
+  color: #657868 !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  translate: translateY(-1px);
+}
+
+.add-cart-btn:active{
+  color: #657868 !important;
+}
+
+.shop-more {
+  background-color: #657868;
+  border: 1px solid #657868;
+  color: #ffffff;
+  padding: 0.8rem 2rem; /* Generous padding */
+  margin: 1rem auto; /* Center the button horizontally */
+  display: block; /* Ensure it behaves like a block element */
+  text-align: center; /* Center the text inside the button */
+}
+
+.shop-more:hover{
+  border: 1px solid #657868; 
+  color: #657868 !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  translate: translateY(-1px);
+}
+
+.shop-more:active{
+  color: #657868 !important;
+}
+
+/* .cart-page-container .btn.btn-success:active {
+  background-color: #455248; /* Even darker when clicked 
+  transform: translateY(0); /* Press effect 
+  box-shadow: none; /* Remove shadow on active 
+} */
+
+/* .cart-page-container .btn.btn-success:disabled {
+  background-color: #aeb1b4; /* Muted color for disabled state 
+  border-color: #aeb1b4;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none; /* No transform when disabled 
+  box-shadow: none;
+} */
+
+/* --- Responsive Adjustments (Keeping as is) --- */
+@media (max-width: 767.98px) { /* Small devices and down */
+  .cart-page-container {
+      margin: 3rem auto 2rem auto;
+      padding: 0 1rem;
+  }
+
+  .cart-page-container h1 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+  }
+
+  .cart-page-container h1::after {
+      width: 60px;
+      height: 3px;
+  }
+
+  .cart-items-list {
+      padding: 1rem;
+  }
+
+  .total-price h4 {
+      font-size: 1.5rem;
+  }
+
+  .cart-page-container .btn.btn-success {
+      width: 100%; /* Make button full width on small screens */
+      font-size: 1.1rem;
+      padding: 0.75rem 1.5rem;
+  }
+}
+
+
+/* --- NEW: Order Summary Section --- */
+.order-summary-card {
+  background-color: #f8f9fa; /* Light background for the summary box */
+  border-radius: 0.75rem;
+  padding: 1.5rem 2rem; /* Padding inside the summary box */
+  border: 1px solid #e9ecef; /* Subtle border */
+  margin-top: 1.5rem; /* Space above the summary card */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Lighter shadow for summary */
+}
+
+.order-summary-card h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 1.25rem; /* Space below the summary title */
+  text-align: center; /* Center the summary title */
+  position: relative;
+}
+
+.order-summary-card h3::after {
+  content: '';
+  display: block;
+  width: 60px; /* Underline effect for summary title */
+  height: 3px;
+  background-color: #657868; /* Matches accent color */
+  margin: 0.5rem auto 0; /* Center the underline */
+  border-radius: 1.5px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between; /* Puts label and value on opposite ends */
+  align-items: center;
+  padding: 0.75rem 0; /* Vertical padding for each item */
+  border-bottom: 1px dashed #e9ecef; /* Dashed separator for items */
+  font-size: 1rem;
+  color: #495057;
+}
+
+.summary-item:last-of-type {
+  border-bottom: none; /* No border for the last item before total if it's the very last */
+  /* Adjust margin-bottom slightly if needed depending on exact order of items */
+  margin-bottom: 0.5rem; /* Small space before the total line */
+}
+
+.summary-item span:first-child {
+  font-weight: 500;
+}
+
+.summary-item span:last-child {
+  font-weight: 600;
+  color: #212529;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem; /* Padding above total */
+  border-top: 2px solid #657868; /* Stronger line for total */
+  margin-top: 1rem; /* Space above the total line */
+}
+
+.summary-total h4 {
+  font-size: 1.8rem; /* Prominent total price */
+  font-weight: 700; /* Bolder total */
+  color: #212529;
+  margin-bottom: 0;
+}
+
+/* --- Responsive adjustments for new Order Summary Section --- */
+@media (max-width: 767.98px) {
+  .order-summary-card {
+      padding: 1rem 1.25rem;
+  }
+
+  .order-summary-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+  }
+
+  .summary-item {
+      font-size: 0.95rem;
+  }
+
+  .summary-total h4 {
+      font-size: 1.6rem;
+  }
+}

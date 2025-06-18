@@ -1,0 +1,110 @@
+/* UserProfileUpdate.css */
+
+.user-profile-update {
+    padding: 30px;
+    background-color: #FFFFFF; /* Pure white for the update form card, clean and elegant */
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Soft, subtle shadow */
+}
+
+.user-profile-update .form-group {
+    margin-bottom: 1rem; /* Adjust mb to suit the row/col layout */
+}
+
+.user-profile-update label {
+    font-weight: 600;
+    color: #34495E; /* Deep blue-grey for labels, providing good contrast */
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.user-profile-update .form-control {
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #DCE4EC; /* Softer, muted border for inputs */
+    color: #343A40; /* Darker text inside inputs */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.user-profile-update .form-control:focus {
+    border-color: #708090; /* Accent color (Slate Gray) on focus */
+    box-shadow: 0 0 0 0.2rem rgba(112, 128, 144, 0.25); /* Subtle shadow with accent color */
+    outline: none;
+}
+
+.user-profile-update .form-control.is-invalid {
+    border-color: #E74C3C; /* Clear red for invalid state */
+    padding-right: calc(1.5em + 0.75rem);
+    /* SVG background image path remains unchanged as it's data URI */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.user-profile-update .invalid-feedback {
+    color: #E74C3C; /* Red for error messages */
+    font-size: 0.875em;
+    margin-top: 0.25rem;
+}
+
+.address-section-title {
+    font-size: 1.5rem;
+    color: #4d2e01; /* Accent color (Slate Gray) for the section title */
+    border-bottom: 2px solid  #d4a373 ; /* Softer border for the title underline */
+    padding-bottom: 8px;
+    margin-bottom: 25px; /* More space below title */
+    font-weight: 600;
+    display: inline-block;
+    text-align: center; /* Center the title */
+}
+
+.user-profile-update .btn {
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    min-width: 120px; /* Consistent button width */
+    color: #FFFFFF; /* White text for all buttons for better contrast */
+}
+
+.user-profile-update .btn-secondary {
+    background-color: #bd0202; /* A sophisticated medium-grey for secondary action */
+    border-color: #8C99A8;
+}
+.user-profile-update .btn-secondary:hover {
+    background-color: transparent; /* Darker grey on hover */
+    border: 1px solid#bd0202;
+    color: #bd0202;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Soft shadow on hover */
+}
+
+.user-profile-update .btn-success {
+    background-color: #4d2e01; /* A fresh, vibrant green for success */
+    border-color: #4d2e01;
+}
+.user-profile-update .btn-success:hover {
+    background-color:transparent; /* Darker green on hover */
+    border:1px solid #4d2e01;
+    color: #4d2e01;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Soft shadow on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .address-section-title {
+        font-size: 1.3rem;
+    }
+    .user-profile-update .btn {
+        width: 100%; /* Full width buttons on smaller screens */
+        max-width: 200px;
+    }
+    .d-flex.justify-content-end.gap-3.mt-4 {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center buttons when stacked */
+        gap: 10px; /* Adjust gap for stacked buttons */
+    }
+}

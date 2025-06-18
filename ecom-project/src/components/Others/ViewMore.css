@@ -1,0 +1,43 @@
+.view-more-button-container {
+    text-align: center; /* Center the button if it's in its own container */
+    margin-top: 3rem;   /* Add some top margin for spacing */
+    margin-bottom: 3rem; /* Add some bottom margin */
+}
+
+.view-more-btn {
+    padding: 10px 25px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    background-color: #4d2e01;
+    color: #ffffff;
+    border-color: #e0e0e0;
+}
+
+.view-more-btn:hover,
+.view-more-btn:focus {
+    background-color: transparent;
+    
+    border: 1px solid #4d2e01;
+    color: #4d2e01; /* Darker on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    translate: translateY(-1px);  /* Remove default focus outline */
+}
+
+.view-more-btn:active {
+    background-color: transparent !important;
+    
+    border: 1px solid #4d2e01 !important;
+    color: #4d2e01 !important; /* Darker on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    translate: translateY(-1px);
+}
+
+.view-more-icon {
+    vertical-align: middle; /* Align icon with text */
+    margin-left: 0.5rem;   /* Space between text and icon */
+    transition: margin-left 0.3s ease-in-out; /* Smooth icon movement */
+}
+
+.view-more-btn:hover .view-more-icon {
+    margin-left: 0.8rem; /* Move icon slightly right on hover */
+}

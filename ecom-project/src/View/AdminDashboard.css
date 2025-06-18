@@ -1,0 +1,73 @@
+/* src/pages/AdminDashboard.css */
+
+/* Overall Page Layout */
+.admin-layout-wrapper {
+    display: flex; /* Establishes flex container for sidebar and main content */
+    min-height: 100vh; /* Ensures layout takes full viewport height */
+    background-color: #f8f9fa; /* Light background for the overall page */
+}
+
+/* Main Content Area */
+.admin-layout-main-content {
+    flex-grow: 1; /* Allows main content to take all available horizontal space */
+    overflow-y: auto; /* Enables vertical scrolling for main content if it overflows */
+    padding-top: 2rem; /* Add consistent padding for the main content */
+    padding-bottom: 2rem;
+    background-color: #ffffff; /* White background for the content area itself */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05); /* Subtle shadow on the content block */
+}
+
+/* Inner padding for main content for better spacing */
+.admin-content-inner {
+    max-width: 1200px; /* Max width for content for readability */
+    margin: 0 auto; /* Center the content */
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* Main Dashboard Title */
+.admin-main-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #343a40;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e9ecef; /* Subtle separator */
+    text-align: left;
+}
+
+/* General section spacing (for Dashboard and OrderListByDate sections) */
+.dashboard-overview,
+.order-section {
+    margin-bottom: 3rem; /* Spacing between main sections */
+}
+
+
+/* Responsive adjustments for overall layout */
+@media (max-width: 768px) {
+    .admin-layout-wrapper {
+        flex-direction: column; /* Stack sidebar and main content vertically on small screens */
+    }
+
+    .admin-layout-main-content {
+        padding-top: 1rem; /* Adjust padding for smaller screens */
+        padding-bottom: 1rem;
+    }
+
+    .admin-content-inner {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .admin-main-title {
+        font-size: 2rem;
+        text-align: center; /* Center title on smaller screens */
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .admin-main-title {
+        font-size: 1.8rem;
+    }
+}

@@ -1,0 +1,273 @@
+/* UpdateProductForm.css */
+
+/*
+    General Layout Adjustments for Sidebar + Content Structure
+    This assumes your main content area (where UpdateProductForm resides)
+    is a sibling to the sidebar or is contained within a flex/grid parent
+    that also contains the sidebar.
+*/
+
+/* If the body or a main wrapper dictates the overall layout */
+body {
+    overflow-x: hidden !important; /* Prevent horizontal scroll for the entire page */
+}
+
+
+.page-wrapper {
+    display: flex !important;
+    min-height: 100vh !important; /* Ensure the whole page takes full viewport height */
+}
+
+.product-update-form{
+    background-color: #65786800;
+}
+/* Main content area (where the form component is rendered) */
+/* This class should wrap the UpdateProductForm component */
+.main-content-area {
+    flex-grow: 1 !important; /* Allow content area to take remaining space */
+    padding: 20px !important; /* Add some padding around the content */
+    overflow-y: auto !important; /* Allow vertical scrolling only for the content if it overflows */
+    -webkit-overflow-scrolling: touch !important; /* Smooth scrolling on iOS */
+    box-sizing: border-box !important; /* Include padding in the element's total width and height */
+    background-color: #f6f6f6 !important; /* A warm, subtle background for the main content */
+}
+
+
+/* --- Form Specific Styling (Refined) --- */
+
+/* The outer container for the form (equivalent to .container-fluid from HTML) */
+.update-product-form-container {
+    padding: 2rem 0 !important; /* Add vertical padding to the container */
+    display: flex !important; /* Use flexbox for centering the inner form */
+    justify-content: center !important; /* Center horizontally */
+    align-items: flex-start !important; /* Align to the top of the container, allowing scroll if content is long */
+    width: 100% !important; /* Ensure it takes full width of its parent */
+    box-sizing: border-box !important;
+}
+
+/* The card-like container for the form itself (equivalent to .p-5.border.border-light-subtle.rounded-4.shadow-lg.bg-white from HTML) */
+.update-product-form-card {
+    background-color: #65786808 !important; /* Keep light, warm off-white, matching product-add-form */
+    border-radius: 1rem !important;
+    border: 1px solid #d4a373 !important; /* Muted earthy brown border */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05) !important; /* Soft shadow */
+    padding: 3rem !important;
+    max-width: 900px !important; /* Limit the maximum width of the form */
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* --- Form Elements Refinement --- */
+.update-product-form-card h2 {
+    color: #4d2e01 !important; /* A darker, softer grey for the text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow effect */
+    letter-spacing: 0.5px !important; /* Slightly increase spacing between letters */
+    font-weight: 700 !important; /* Ensure it's bold */
+    padding-bottom: 10px !important; /* Add some space below the title */
+    border-bottom: 2px solid #d4a373 !important; /* A subtle underline that matches your accent color */
+    display: inline-block !important; /* Essential for border-bottom to fit content width in text-center */
+    margin-bottom: 2.5rem !important; /* More space below the main heading */
+    width: auto !important; /* Allow border-bottom to fit content */
+}
+
+/* Center the main heading */
+.update-product-form-card .text-center {
+    text-align: center !important;
+}
+
+
+.update-product-form-card .form-label {
+    color: #6a5e51 !important; /* Darker, warm grey for labels */
+    font-weight: 600 !important;
+    margin-bottom: 0.6rem !important; /* Consistent spacing below labels */
+    display: block !important; /* Ensure labels take full width for consistent spacing */
+}
+
+.update-product-form-card .form-control,
+.update-product-form-card .form-select,
+.update-product-form-card textarea.form-control {
+    border: 1px solid #dee2e6 !important; /* Lighter border color, you might adjust this for more warmth */
+    border-radius: 0.5rem !important; /* More rounded input fields */
+    padding: 0.8rem 1.2rem !important; /* Generous padding for inputs */
+    font-size: 1.05rem !important; /* Slightly larger font size */
+    line-height: 1.5 !important;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out !important;
+    width: 100% !important; /* Ensure inputs take full width of their parent column */
+    box-sizing: border-box !important;
+}
+
+.update-product-form-card .form-control:focus,
+.update-product-form-card .form-select:focus,
+.update-product-form-card textarea.form-control:focus {
+    border-color: #d4a373 !important; /* Focus border aligns with accent */
+    box-shadow: 0 0 0 0.25rem rgba(212, 163, 115, 0.25) !important; /* Accent color shadow */
+    outline: none !important; /* Remove default outline */
+}
+
+/* Specific styling for textarea to ensure consistent height if needed */
+.update-product-form-card textarea.form-control {
+    min-height: 120px !important; /* Ensure description textarea has a decent initial height */
+    resize: vertical !important; /* Allow vertical resizing */
+}
+
+
+/* --- Horizontal Rule and Section Headings --- */
+.update-product-form-card hr {
+    margin-top: 3.5rem !important; /* More space above and below the hr */
+    margin-bottom: 3.5rem !important;
+    border-top: 2px solid #e9ecef !important; /* Thicker, lighter separator */
+    opacity: 1 !important; /* Ensure the hr is fully visible */
+    border-color: #e0c8b6 !important; /* Matching the dashed border color for consistency */
+}
+
+.update-product-form-card h3 {
+    color: #4d2e01 !important; /* Matching the main title color */
+    font-weight: 600 !important;
+    margin-bottom: 2.5rem !important; /* More space below variant heading */
+    text-align: center !important; /* Center the heading */
+    opacity: 0.85 !important; /* Slightly less opaque than main heading */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05) !important; /* Subtle shadow for sub-headings */
+}
+
+/* --- Product Variant Section --- */
+/* This class will be applied to the individual product variant divs */
+.product-variant-section {
+    background-color: #fcf9f5 !important; /* Slightly lighter than form background */
+    border: 1px dashed #e0c8b6 !important; /* Lighter, complementary dashed border */
+    border-radius: 0.75rem !important; /* Rounded corners for variant sections */
+    padding: 2rem !important; /* Increase padding inside variant sections */
+    margin-bottom: 1.75rem !important; /* Space between variant blocks */
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.03) !important; /* Lighter shadow for variants */
+}
+
+
+.product-variant-section h5 {
+    color: #3b2a20 !important; /* Darker brown for individual variants heading */
+    font-weight: 600 !important;
+    margin-bottom: 1.5rem !important; /* Space below variant number heading */
+}
+
+/* --- Buttons --- */
+.update-product-form-card .btn {
+    transition: all 0.3s ease !important; /* Smooth transitions for all buttons */
+}
+
+.update-product-form-card .btn-lg {
+    padding: 0.75rem 2.5rem !important; /* Larger padding for main buttons */
+    font-size: 1.1rem !important;
+    border-radius: 0.5rem !important; /* Rounded button corners */
+    font-weight: 600 !important;
+}
+
+.update-product-form-card .btn-sm {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.85rem !important;
+    border-radius: 0.4rem !important;
+}
+
+/* Custom styles for 'Add Another Variant' button (Outline/Secondary Action) */
+.update-product-form-card .btn-outline-secondary { /* Renamed from btn-outline-primary */
+    border-color: #d4a373 !important; /* Main accent color for border */
+    color: #d4a373 !important; /* Main accent color for text */
+    font-weight: 500 !important;
+}
+
+.update-product-form-card .btn-outline-secondary:hover { /* Renamed from btn-outline-primary */
+    border-color: #e0c8b6 !important; /* Lighter border on hover */
+    background-color: #d4a373 !important; /* Fill with accent color on hover */
+    color: rgb(255, 255, 255) !important; /* White text on hover */
+    box-shadow: 0 4px 8px rgba(212, 163, 115, 0.4) !important; /* Accent color shadow */
+}
+
+/* Custom styles for 'Update Product' button (Primary Action) */
+.update-product-form-card .btn-primary { /* Renamed from btn-success */
+    background-color: #a47b59 !important; /* Deeper, rich brown */
+    border-color: #a47b59 !important; /* Matching border */
+    color: rgb(241, 5, 5) !important; /* White text for contrast */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn-update {
+    color: #4d2e01; /* A darker, softer grey for the text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    letter-spacing: 0.5px; /* Slightly increase spacing between letters */
+    font-weight: 700; /* Ensure it's bold */
+    padding-bottom: 10px; /* Add some space below the title */
+    border-bottom: 2px solid #d4a373; /* A subtle underline that matches your accent color */
+    display: inline-block;
+}
+
+.update-product-form-card .btn-update:hover { /* Renamed from btn-success */
+    background-color: #d4a373 !important; /* Lighter accent brown on hover */
+    border-color: #d4a373 !important; /* Matching border on hover */
+    color: #3b2a20 !important; /* Dark text for contrast on lighter background */
+    box-shadow: 0 4px 8px rgba(165, 89, 17, 0.2) !important;
+}
+
+/* Custom styles for 'Remove Variant' button (Danger Action) */
+.update-product-form-card .btn-outline-danger {
+    color: #b05e46 !important; /* A slightly more muted red-brown for danger */
+    border-color: #b05e46 !important;
+}
+
+.update-product-form-card .btn-outline-danger:hover {
+    background-color: #b05e46 !important;
+    color: #fff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 0.5rem 1rem rgba(176, 94, 70, 0.15) !important;
+}
+
+/* Flexbox for spacing between variant heading and remove button */
+.product-variant-section .d-flex {
+    justify-content: space-between !important; /* Ensure spacing between items */
+    align-items: center !important; /* Vertically align items */
+}
+
+/* Adjustments for Bootstrap grid spacing if columns are too close */
+.row.g-4 > [class*="col-"],
+.row.g-3 > [class*="col-"] {
+    padding-right: calc(var(--bs-gutter-x) * .5) !important; /* Reduce right padding */
+    padding-left: calc(var(--bs-gutter-x) * .5) !important;  /* Reduce left padding */
+    padding-bottom: 1.25rem !important; /* Add consistent vertical space between rows in grid */
+}
+
+/* Specific adjustments for input fields inside form rows */
+.row .col-md-6,
+.row .col-md-4,
+.row .col-12 {
+    margin-bottom: 0.5rem !important; /* Add slight bottom margin to columns for vertical spacing */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+    .update-product-form-card {
+        padding: 2rem !important; /* Reduce padding on smaller screens */
+    }
+
+    .update-product-form-card h2 {
+        font-size: 1.8rem !important; /* Adjust heading size */
+        margin-bottom: 2rem !important;
+    }
+
+    .update-product-form-card .btn-lg {
+        padding: 0.6rem 2rem !important;
+        font-size: 1rem !important;
+    }
+
+    .product-variant-section {
+        padding: 1.5rem !important; /* Reduce padding for variant sections */
+        margin-bottom: 1.5rem !important;
+    }
+}
+
+.product-form-title {
+    color: #4d2e01; /* A darker, softer grey for the text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    letter-spacing: 0.5px; /* Slightly increase spacing between letters */
+    font-weight: 700; /* Ensure it's bold */
+    padding-bottom: 10px; /* Add some space below the title */
+    border-bottom: 2px solid #d4a373; /* A subtle underline that matches your accent color */
+    display: inline-block; /* Essential for border-bottom to fit content width in text-center */
+}
+
+

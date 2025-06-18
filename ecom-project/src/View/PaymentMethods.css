@@ -1,0 +1,262 @@
+/* src/components/PaymentMethods.css */
+
+/* Overall Page Wrapper */
+.payment-methods-wrapper {
+    /* Adjusted padding-top to account for the header in your image */
+    padding-top: 100px;
+    padding-bottom: 50px;
+    background-color: #F8F6F4; /* Light, simple background matching the image */
+    min-height: calc(100vh - 56px); /* Full viewport height minus nav height */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    font-family: Arial, sans-serif; /* A common, clean font like in the image */
+    color: #555555; /* Standard text color */
+}
+
+/* Main Card Style */
+.payment-card {
+    background-color: #FFFFFF; /* White card background */
+    border: 1px solid #E0E0E0; /* Softer border from image */
+    border-radius: 8px; /* Consistent with image's card corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03); /* Very subtle shadow from image */
+    max-width: 500px; /* Consistent max-width for forms */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 40px; /* Generous padding as seen in image */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Card Title */
+.payment-card-title {
+    color: #4d2e01 !important; /* A darker, softer grey for the text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1) !important; /* Subtle shadow effect */
+    letter-spacing: 0.5px; /* Slightly increase spacing between letters */
+    font-weight: 700; /* Ensure it's bold */
+    padding-bottom: 10px; /* Add some space below the title */
+    border-bottom: 2px solid #d4a373 !important; /* A subtle underline using your accent color */
+    display: inline-block; /* Resetting any previous letter-spacing */
+}
+
+/* .payment-card-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 60px; /* Width of the underline 
+    height: 2px; /* Thickness of the underline 
+    background-color: #AAAAAA; /* Medium grey for the underline 
+} */
+
+/* Custom Dropdown Toggle (looks like a simple input field) */
+.payment-dropdown-toggle {
+    border: 1px solid #E0E0E0; /* Matches card border */
+    border-radius: 4px; /* Slightly less rounded than card, like inputs in image */
+    padding: 0.8rem 1rem; /* Adjusted padding */
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #fff;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.15s ease-in-out; /* Simplified transitions */
+    display: flex; /* To align text and caret */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: #555555; /* Body text color */
+}
+
+.payment-dropdown-toggle:hover {
+    border-color: #343a40; /* Darker border on hover */
+    box-shadow: 0 0 0 0.1rem rgba(52, 58, 64, 0.1); /* Subtle dark glow */
+}
+
+.payment-dropdown-toggle.active {
+    border-color: #343a40; /* Darker border when active */
+    box-shadow: 0 0 0 0.15rem rgba(52, 58, 64, 0.2); /* Slightly more pronounced focus ring */
+}
+
+/* Dropdown Caret */
+.payment-dropdown-caret {
+    transition: transform 0.2s ease-in-out;
+    display: inline-block; /* Ensure transform applies correctly */
+    color: #555555; /* Matches body text color */
+}
+
+.payment-dropdown-caret.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/* Custom Dropdown Menu (the list of options) */
+.payment-dropdown-menu {
+    border: 1px solid #E0E0E0; /* Matches card border */
+    border-radius: 4px; 
+    position: relative; /* Matches toggle radius */
+    overflow: hidden; /* Ensures rounded corners are respected */
+    background-color: #f8f9fa;
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 5px 0 0 0; /* Small space below toggle */
+    z-index: 1000; /* Ensure it appears above other content */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03); /* Very subtle dropdown shadow */
+}
+
+/* Custom Dropdown Items */ 
+.payment-dropdown-item {
+    padding: 0.7rem 1rem; /* Adjusted padding */
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+    font-size: 1rem;
+    color: #555555; /* Default text color */
+}
+
+.payment-dropdown-item:not(:last-child) {
+    border-bottom: 1px solid #4d2f011c; /* Very light separator */
+}
+
+.payment-dropdown-item:hover:not(.disabled-option) {
+    background-color: #f7f7f7; /* Very light background on hover */
+}
+
+.payment-dropdown-item.selected-option {
+    background-color: #fcfcfc;
+    /* Use the filled button's background */
+    color: #000000; /* White text for contrast */
+}
+
+.payment-dropdown-item.selected-option:hover {
+    background-color: #3A2715;
+    color: #fff; /* Darker on hover for selected */
+}
+
+.payment-dropdown-item.disabled-option {
+    color: #b0b0b0; /* Lighter grey for disabled */
+    background-color: #fcfcfc;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+/* Button Container (for side-by-side buttons) */
+/* You'll need to wrap your buttons in a div with this class in your HTML */
+.payment-buttons-container {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+    margin-top: 30px; /* Space above buttons */
+    justify-content: center; /* Center buttons if not full width */
+}
+
+/* Base Button Style */
+.payment-btn {
+    font-weight: normal; /* As seen in image, not too bold */
+    padding: 10px 25px;
+    border-radius: 4px; /* Slightly rounded corners for buttons */
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    cursor: pointer;
+    font-size: 0.95rem;
+    text-align: center;
+    min-width: 120px; /* Ensure consistent width if possible */
+    /* Remove original transform: translateY(-1px); */
+}
+
+/* Primary "Proceed to Checkout" (Filled Button like 'Confirm Order') */
+.payment-btn-filled {
+    background-color: #4A321E;
+    padding: 10px 25px;
+    border-radius: 6px; /* Dark brown from 'Confirm Order' button */
+    color: #FFFFFF; /* White text */
+    border: 1px solid #4A321E; /* Solid border matching background */
+}
+
+.payment-btn-filled:hover {
+    background-color: transparent; /* Slightly darker brown on hover */
+    border: 1px solid #3A2715;
+    color: #3A2715;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    translate: translateY(-1px);
+}
+
+/* Secondary "Update Address" (Outlined Button) - if you need one */
+/* Apply this class to a second button if you have one */
+.payment-btn.outlined {
+    background-color: #FFFFFF;
+    color: #343a40;
+    border: 1px solid #343a40;
+}
+
+.payment-btn.outlined:hover {
+    background-color: #F0F0F0; /* Subtle grey hover */
+    border-color: #343a40;
+}
+
+/* Loading Spinner */
+.payment-card .spinner-border {
+    color: #4A321E; /* Spinner matches filled button color */
+    width: 1.8rem;
+    height: 1.8rem;
+    border-width: 0.2em;
+}
+
+/* Error Alert */
+.payment-card .alert {
+    border-radius: 4px; /* Consistent with other elements */
+    font-size: 0.9rem;
+    padding: 12px 15px;
+    text-align: center;
+    background-color: #ffebeb; /* Light red */
+    color: #cc0000; /* Darker red text */
+    border: 1px solid #ffaaaa;
+    box-shadow: none; /* No shadow for simplicity */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .payment-methods-wrapper {
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+    .payment-card {
+        padding: 25px 30px;
+        border-radius: 6px;
+    }
+    .payment-card-title {
+        font-size: 1.7rem;
+        margin-bottom: 20px;
+    }
+    .payment-dropdown-toggle,
+    .payment-dropdown-item,
+    .payment-btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+    .payment-buttons-container {
+        flex-direction: column; /* Stack buttons on smaller screens */
+        gap: 10px;
+    }
+    .payment-btn {
+        width: 100%; /* Full width when stacked */
+        min-width: unset;
+    }
+}
+
+@media (max-width: 576px) {
+    .payment-methods-wrapper {
+        padding-top: 60px;
+        padding-bottom: 20px;
+        justify-content: flex-start;
+    }
+    .payment-card {
+        border-radius: 5px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03); /* Even lighter shadow on mobile */
+        margin: 0 10px; /* Add horizontal margin on very small screens */
+        padding: 20px 20px;
+    }
+    .payment-card-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    .payment-card-title::after {
+        width: 40px;
+        height: 1.5px;
+    }
+}
