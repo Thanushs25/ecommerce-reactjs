@@ -77,29 +77,31 @@ The app will run at http://localhost:5173
 ## Screenshots
 
 ### User Side
-- Home page
-  <img src="Screenshots/01.jpg" alt="Home Page" width="100"/>
-- Products Page
-  <img src="Screenshots/02.jpg" alt="Product Page Page" width="100"/>
-- Login Page
-  <img src="Screenshots/03.jpg" alt="Login Page" width="100"/>
-- Profile Page
-  <img src="Screenshots/04.jpg" alt="Profile Page" width="100"/>
-- Product View Page
-  <img src="Screenshots/05.jpg" alt="Product View Page" width="100"/>
-- Cart Page
-  <img src="Screenshots/06.jpg" alt="Cart Page" width="100"/>
-- Order Page
-  <img src="Screenshots/07.jpg" alt="Order Page" width="100"/>
-- View Orders Page
-  <img src="Screenshots/08.jpg" alt="View Orders Page" width="100"/>
+- Home page &nbsp;
+  <img src="Screenshots/01.jpg" alt="Home Page" width="300"/>
+- Products Page &nbsp;
+  <img src="Screenshots/02.jpg" alt="Product Page Page" width="300"/>
+- Login Page &nbsp;
+  <img src="Screenshots/03.jpg" alt="Login Page" width="300"/>
+- Profile Page &nbsp;
+  <img src="Screenshots/04.jpg" alt="Profile Page" width="300"/>
+- Product View Page &nbsp;
+  <img src="Screenshots/05.jpg" alt="Product View Page" width="300"/>
+- Cart Page &nbsp;
+  <img src="Screenshots/06.jpg" alt="Cart Page" width="300"/>
+- Order Page &nbsp;
+  <img src="Screenshots/07.jpg" alt="Order Page" width="300"/>
+- View Orders Page &nbsp;
+  <img src="Screenshots/08.jpg" alt="View Orders Page" width="300"/>
+
+--- 
 
 ### Admin Side
-- Admin Dashboard
-  <img src="Screenshots/09.jpg" alt="Admin Dashboard Page" width="100"/>
-- Product Manage Page
-  <img src="Screenshots/10.jpg" alt="Product Manage Page" width="100"/>
-- Product Add Page
-  <img src="Screenshots/11.jpg" alt="Add Product Page" width="100"/>
-- Manage Order Page
-  <img src="Screenshots/12.jpg" alt="Manage Orders Page" width="100"/>
+- Admin Dashboard &nbsp;
+  <img src="Screenshots/09.jpg" alt="Admin Dashboard Page" width="300"/>
+- Product Manage Page &nbsp;
+  <img src="Screenshots/10.jpg" alt="Product Manage Page" width="300"/>
+- Product Add Page &nbsp;
+  <img src="Screenshots/11.jpg" alt="Add Product Page" width="300"/>
+- Manage Order Page &nbsp;
+  <img src="Screenshots/12.jpg" alt="Manage Orders Page" width="300"/>
